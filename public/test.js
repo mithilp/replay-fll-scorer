@@ -48,8 +48,6 @@ document.getElementById("app").innerHTML = `
 </div>
 `;
 
-startTimer();
-
 function onTimesUp() {
   clearInterval(timerInterval);
 }
@@ -112,4 +110,15 @@ function setCircleDasharray() {
   document
     .getElementById("base-timer-path-remaining")
     .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+var flag = false;
+function playpause() {
+  if (flag) {
+    clearInterval(timerInterval);
+    flag = false;
+  }else {
+    startTimer();
+    flag = true;
+  }
 }

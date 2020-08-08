@@ -15,14 +15,21 @@ html {
   height: 100vh;
   place-items: center;
   grid-template-columns: 100%;
-  grid-template-rows: 10% 1fr;
+  grid-template-rows: 20% 1fr;
   gap: 1px 1px;
   grid-template-areas: "timer-and-buttons" "scorer";
   padding: 30px;
 }
 
+.buttons-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
 .timer-and-buttons {
   grid-area: timer-and-buttons;
+  display: flex;
+  align-items: center;
 }
 
 .scorer {
@@ -37,14 +44,79 @@ html {
   grid-template-areas: "column1 column2 column3";
 }
 
-.column1 { grid-area: column1; }
-
-.column2 { grid-area: column2; }
-
-.column3 { grid-area: column3; }
-
-.scorer div {
+.column1 {
+  grid-area: column1;
   height: 100%;
+}
+
+.column2 {
+  grid-area: column2;
+  height: 100%;
+}
+
+.column3 {
+  grid-area: column3;
+  height: 100%;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.card-body p {
+  color: white;
+  margin: 0;
+}
+
+.buttons-container input[type="radio"] {
+  display: none;
+}
+
+.playpause label {
+  display: block;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  outline: none;
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  cursor: pointer;
+  border-style: solid;
+  outline: none;
+  border-width: 37px 0 37px 60px;
+
+}
+.playpause input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+  outline: none;
+}
+.playpause input[type="checkbox"]:checked + label {
+  border-style: double;
+  outline: none;
+  border-width: 0px 0 0px 60px;
+}
+.playpause input[type="checkbox"]:focus + label {
+  outline: none;
+}
+
+.buttons-container label {
+  padding: 10px 20px;
+  background-color: #CFDE9E;
+  border-radius: 10px;
+  margin:5px;
+  display: inline-block;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.buttons-container label:hover {
+  background-color: #eeffb5;
+}
+
+.buttons-container input[type="radio"]:checked + label {
+  background-color: #59BAD9;
+  cursor: pointer;
 }
 
 .name {
@@ -53,17 +125,20 @@ html {
   border-top-right-radius: 20px;
   padding: 10px;
   font-size: 20px;
+  margin:0;
 }
 
 .card {
   border-radius: 20px;
-  background-color: red;
+  background-color: #848484;
+  margin: 10px;
 }
 
 .base-timer {
   position: relative;
   width: 100px;
   height: 100px;
+  margin: 0 20px;
 }
 
 .base-timer__svg {

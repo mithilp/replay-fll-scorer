@@ -9,6 +9,10 @@
     <div class="everything">
       <div class="timer-and-buttons">
         <div id="app"></div>
+        <div class="playpause">
+          <input type="checkbox" value="None" id="playpause" onchange="playpause()" name="check" />
+          <label for="playpause" tabindex=1></label>
+        </div>
       </div>
       <div class="scorer">
         <div class="column1">
@@ -16,10 +20,25 @@
             <h1 class="name">M00 - EQUIPMENT INSPECTION BONUS</h1>
             <div class="card-body">
               <p>Does all team equipment fit in the small inspection space?</p>
+              <div class="buttons-container">
+                <input id="toggle-on" name="toggle" type="radio">
+                <label for="toggle-on">On</label>
+                <input id="toggle-off" name="toggle" type="radio">
+                <label for="toggle-off">Off</label>
+              </div>
             </div>
           </div>
           <div class="mission card">
-            <h1 class="name">ADVANTAGE</h1>
+            <h1 class="name">M01 - INNOVATION PROJECT</h1>
+            <div class="card-body">
+              <p>The innovation project is large enough (2+ white LEGO pieces and 4+ LEGO studs long)</p>
+              <div class="buttons-container">
+                <input id="toggle-on" name="toggle" type="radio">
+                <label for="toggle-on">On</label>
+                <input id="toggle-off" name="toggle" type="radio">
+                <label for="toggle-off">Off</label>
+              </div>
+            </div>
           </div>
         </div>
         <div class="column2">
