@@ -1,0 +1,114 @@
+* {
+  font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+body {
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.everything {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 1fr;
+  gap: 1px 1px;
+  grid-template-areas: "timer-and-buttons" "scorer";
+  padding: 30px;
+}
+
+.timer-and-buttons {
+  grid-area: timer-and-buttons;
+}
+
+.scorer {
+  grid-area: scorer;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100%;
+  gap: 1px 1px;
+  width: 100%;
+  height: 100%;
+  margin-top: 30px;
+  grid-template-areas: "column1 column2 column3";
+}
+
+.column1 { grid-area: column1; }
+
+.column2 { grid-area: column2; }
+
+.column3 { grid-area: column3; }
+
+.scorer div {
+  height: 100%;
+}
+
+.name {
+  background-color: #59BAD9;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.card {
+  border-radius: 20px;
+  background-color: red;
+}
+
+.base-timer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
