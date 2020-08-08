@@ -122,3 +122,10 @@ function playpause() {
     flag = true;
   }
 }
+
+$(".button1").click(function() {
+  var otherButton = this.value == "Yes" ? "No" : "Yes";
+  $(this).css({'background':'#59BAD9', 'color':'white'});
+  $(this).siblings(`.button1[value=${otherButton}]`).css({'background':'white', 'color':'black'});
+  $(this).siblings(".answer").val(this.value);
+});

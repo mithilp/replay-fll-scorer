@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>FLL RePlay Scorer</title>
     <link rel="stylesheet" href="/test.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="everything">
@@ -21,22 +22,18 @@
             <div class="card-body">
               <p>Does all team equipment fit in the small inspection space?</p>
               <div class="buttons-container">
-                <input id="toggle-on" name="toggle" type="radio">
-                <label for="toggle-on">On</label>
-                <input id="toggle-off" name="toggle" type="radio">
-                <label for="toggle-off">Off</label>
+                <input type="text" id="ans01" class="answer" hidden/>
+                <input type="button" id="y01" class="button button1" value="Yes" />
+                <input type="button" id="n01" class="button button1" value="No" />
               </div>
             </div>
+            <h1 class="points">Points: </h1>
           </div>
           <div class="mission card">
             <h1 class="name">M01 - INNOVATION PROJECT</h1>
             <div class="card-body">
               <p>The innovation project is large enough (2+ white LEGO pieces and 4+ LEGO studs long)</p>
               <div class="buttons-container">
-                <input id="toggle-on" name="toggle" type="radio">
-                <label for="toggle-on">On</label>
-                <input id="toggle-off" name="toggle" type="radio">
-                <label for="toggle-off">Off</label>
               </div>
             </div>
           </div>
@@ -48,6 +45,11 @@
 
         </div>
       </div>
+    </div>
+
+    <div class="footer">
+      <p>Points: 0</p>
+      <button onclick="reset()" class="button">Reset</button>
     </div>
     <script src="/test.js" charset="utf-8"></script>
   </body>

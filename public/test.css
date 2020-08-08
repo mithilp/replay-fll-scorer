@@ -15,7 +15,7 @@ html {
   height: 100vh;
   place-items: center;
   grid-template-columns: 100%;
-  grid-template-rows: 20% 1fr;
+  grid-template-rows: 10% 1fr;
   gap: 1px 1px;
   grid-template-areas: "timer-and-buttons" "scorer";
   padding: 30px;
@@ -68,10 +68,6 @@ html {
   margin: 0;
 }
 
-.buttons-container input[type="radio"] {
-  display: none;
-}
-
 .playpause label {
   display: block;
   box-sizing: border-box;
@@ -100,32 +96,17 @@ html {
   outline: none;
 }
 
-.buttons-container label {
-  padding: 10px 20px;
-  background-color: #CFDE9E;
-  border-radius: 10px;
-  margin:5px;
-  display: inline-block;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.buttons-container label:hover {
-  background-color: #eeffb5;
-}
-
-.buttons-container input[type="radio"]:checked + label {
-  background-color: #59BAD9;
-  cursor: pointer;
-}
-
-.name {
+.name, .points {
   background-color: #59BAD9;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   padding: 10px;
   font-size: 20px;
   margin:0;
+}
+
+.points {
+  
 }
 
 .card {
@@ -186,4 +167,61 @@ html {
   align-items: center;
   justify-content: center;
   font-size: 28px;
+}
+
+.button {
+  background: white;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  width: 100px;
+  transition: 0.4s;
+  color: black;
+  border: 2px solid #e7e7e7;
+  font-weight: 600;
+}
+
+.button1 {
+  color: black;
+  border: 2px solid #e7e7e7;
+}
+
+.button:active,
+.button:focus,
+.button:visited {
+  outline: none;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #59BAD9;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.footer p {
+  font-weight: 600;
+  margin: 15px 20px;
+  font-size: 20px;
+}
+
+.button:hover {
+  background-color: #e6f9ff;
+}
+
+.button:active {
+  background-color: #59BAD9;
+  color: white;
 }
