@@ -26,10 +26,18 @@
                 height: 100vh;
                 place-items: center;
                 grid-template-columns: 100%;
-                grid-template-rows: 100px 1fr;
+                grid-template-rows: 100px auto 1fr;
                 gap: 1px 1px;
-                grid-template-areas: "timer-and-buttons" "scorer";
+                grid-template-areas: "timer-and-buttons" "title" "scorer";
                 padding: 0 15px;
+            }
+
+            .title {
+                text-align: center;
+                grid-area: title;
+                font-size: 40px;
+                margin: 15px 0 5px 0;
+                font-weight: 800;
             }
 
             .buttons-container {
@@ -250,7 +258,7 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 600;
+                font-weight: 400;
             }
 
             .button:disabled {
@@ -322,12 +330,13 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 600;
+                font-weight: 400;
                 outline: none;
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
                 background: url(https://cdn.iconscout.com/icon/free/png-256/keyboard-down-arrow-1780093-1518654.png) 96% / 15% no-repeat white;
+                text-align: left;
             }
 
             input[type=range] {
@@ -383,7 +392,7 @@
                 background: #59BAD9;
             }
 
-            input[type=range]:disabled::-moz-range-track {
+            input[type=range]::-moz-range-track {
                 height: 15px;
                 cursor: pointer;
                 transition: 0.2s;
@@ -395,7 +404,7 @@
 
             input[type=range]:disabled::-moz-range-track {
                 cursor: not-allowed;
-                opacity: 0.75;
+                background: #59BAD973;
             }
 
             input[type=range]::-moz-range-thumb {
@@ -481,7 +490,7 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 600;
+                font-weight: 400;
             }
 
             .slidecontainer input[type=number]:disabled {
@@ -540,7 +549,7 @@
                 }
 
                 .everything {
-                    grid-template-rows: 195px 1fr;
+                    grid-template-rows: 225px 1fr;
                 }
 
                 .timer h1, .stopwatch h1 {
@@ -628,6 +637,7 @@
                     }
                 </script>
             </div>
+            <div class="title">FLL RePLAY Scorer</div>
             <div class="scorer">
 
                 <div class="column1">
