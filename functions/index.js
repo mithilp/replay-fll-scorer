@@ -11,14 +11,10 @@ app.set('view engine', 'ejs');
 
 app.use(favicon(path.join(__dirname, '/', 'favicon.ico')))
 
-app.get('/',function (req,res) {
+app.get('/*',function (req,res) {
   //cached for a month
   res.setHeader("Cache-Control", "public, max-age=2592000");
   res.render("index")
-})
-
-app.use(function (req, res, next) {
-  res.status(404).render('404')
 })
 
 exports.app = functions.https.onRequest(app);
