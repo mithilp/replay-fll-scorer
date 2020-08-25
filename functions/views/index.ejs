@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" prefix="og: https://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
         <title>FLL RePLAY Scorer</title>
@@ -7,10 +7,54 @@
         <script src="https://kit.fontawesome.com/ab4ab530af.js" crossorigin="anonymous"></script>
         <meta name="theme-color" content="#59BAD9">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="Description" content="Practice your FIRST LEGO League runs for the 2020-21 RePLAY Season. With timers to time yourself and interactive forms to score yourself, this site is exactly what you need to excell.">
+        <meta name="description" content="Practice your FIRST LEGO League runs for the 2020-21 RePLAY Season. With timers to time yourself and interactive forms to score yourself, this site is exactly what you need to excel.">
+        <meta name="google-site -verification" content="M6iGA7WMjz1W1serbpjOLNPm9qj07ijcoKGSp2HFdDA" />
+        <meta property="og:title" content="FLL RePLAY Scorer - All the FIRST Lego League tools to excel."/>
+        <meta property="og:description" content="Practice your FIRST LEGO League runs for the 2020-21 RePLAY Season. With timers to time yourself and interactive forms to score yourself, this site is exactly what you need to excel."/>
+        <link rel="canonical" href="https://scorerfll.web.app/">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-176264482-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-176264482-1');
+        </script>
         <style>
+
+            @font-face {
+                font-family: 'GT-Walsheim-Pro';
+                src: url('/static/GT-Walsheim-Pro-Black.woff2') format('woff2');
+                font-weight: 800;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'GT-Walsheim-Pro';
+                src: url('/static/GT-Walsheim-Pro-Bold.woff2') format('woff2');
+                font-weight: 600;
+                font-style: normal;
+            }
+
+            @font-face {
+                font-family: 'GT-Walsheim-Pro';
+                src: url('/static/GT-Walsheim-Pro-Regular.woff2') format('woff2');
+                font-weight: normal;
+                font-style: normal;
+            }
+
             * {
-                font-family: Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-family: "GT-Walsheim-Pro",Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                line-height: 1.15em;
+            }
+
+            .goog-te-gadget .goog-te-combo {
+                font-family: "GT-Walsheim-Pro",Graphik,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+            }
+
+            .goog-logo-link {
+                font-weight: normal;
             }
 
             body {
@@ -19,6 +63,7 @@
 
             html {
                 scroll-behavior: smooth;
+                scrollbar-color: #59BAD9 #848484;
             }
 
             .everything {
@@ -35,8 +80,12 @@
             .title {
                 text-align: center;
                 grid-area: title;
-                font-size: 40px;
                 margin: 15px 0 5px 0;
+            }
+
+            .title h1 {
+                margin: 0;
+                font-size: 40px;
                 font-weight: 800;
             }
 
@@ -258,7 +307,7 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 400;
+                font-weight: 600;
             }
 
             .button:disabled {
@@ -330,7 +379,7 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 400;
+                font-weight: 600;
                 outline: none;
                 -webkit-appearance: none;
                 -moz-appearance: none;
@@ -490,7 +539,7 @@
                 transition: 0.4s;
                 color: black;
                 border: 2px solid #e7e7e7;
-                font-weight: 400;
+                font-weight: 600;
             }
 
             .slidecontainer input[type=number]:disabled {
@@ -530,11 +579,16 @@
             }
 
             #time {
-                font-family: Courier, monospace
+                font-family: Courier, monospace;
+                font-size: 40px;
             }
 
             .bottomText {
                 margin: 0.3em 10em;
+            }
+
+            .time-headers {
+                font-size: 36px;
             }
 
             @media only screen and (max-width: 1000px) {
@@ -573,7 +627,7 @@
         <div class="everything">
             <div class="timer-and-buttons">
                 <div class="timer">
-                    <h1>Timer</h1>
+                    <h2 class="time-headers">Timer</h2>
                     <div id="app"></div>
                     <div class="playpause">
                         <input type="checkbox" value="None" id="playpause" onchange="playpause()" name="check"/>
@@ -582,8 +636,8 @@
                     <i onclick="resetTimer()" class="fas fa-redo-alt icon"></i>
                 </div>
                 <div class="stopwatch">
-                    <h1>Stopwatch</h1>
-                    <h1 id="time" style="margin: 0 20px;">0:00</h1>
+                    <h2 class="time-headers">Stopwatch</h2>
+                    <h2 id="time" style="margin: 0 20px;">0:00</h2>
                     <div class="stopwatch-playpause">
                         <input type="checkbox" value="None" id="playpause-stopwatch" onchange="startstop()" name="check"/>
                         <label for="playpause-stopwatch"></label>
@@ -637,12 +691,12 @@
                     }
                 </script>
             </div>
-            <div class="title">FLL RePLAY Scorer</div>
+            <div class="title"><h1>FLL RePLAY Scorer</h1></div>
             <div class="scorer">
 
                 <div class="column1">
                     <div class="mission card">
-                        <h1 id="m00" class="name">M00 - ADVANTAGE: 0</h1>
+                        <h3 id="m00" class="name">M00 - ADVANTAGE: 0</h3>
                         <div class="card-body">
                             <p>Does all team equipment fit in the small inspection space?</p>
                             <div class="buttons-container">
@@ -653,7 +707,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m01">M01 - INNOVATION PROJECT: 0</h1>
+                        <h3 class="name" id="m01">M01 - INNOVATION PROJECT: 0</h3>
                         <div class="card-body">
                             <p>Is any part of the model touching either the RePLAY logo or the gray area around the bench?</p>
                             <div class="buttons-container">
@@ -664,7 +718,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m02">M02 - STEP COUNTER: 0</h1>
+                        <h3 class="name" id="m02">M02 - STEP COUNTER: 0</h3>
                         <div class="card-body">
                             <p>The bottom of the pointer is on</p>
                             <div class="buttons-container">
@@ -678,7 +732,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m03">M03 - SLIDE: 0</h1>
+                        <h3 class="name" id="m03">M03 - SLIDE: 0</h3>
                         <div class="card-body">
                             <p>First person off the slide</p>
                             <div class="buttons-container">
@@ -707,7 +761,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m04">M04 - BENCH: 0</h1>
+                        <h3 class="name" id="m04">M04 - BENCH: 0</h3>
                         <div class="card-body">
                             <p>Knocks down the bench</p>
                             <div class="buttons-container">
@@ -731,7 +785,7 @@
                 </div>
                 <div class="column2">
                     <div class="mission card">
-                        <h1 class="name" id="m05">M05 - BASKETBALL: 0</h1>
+                        <h3 class="name" id="m05">M05 - BASKETBALL: 0</h3>
                         <div class="card-body">
                             <p>Cube inside the crate</p>
                             <div class="buttons-container">
@@ -750,7 +804,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m06">M06 - PULL-UP BAR: 0</h1>
+                        <h3 class="name" id="m06">M06 - PULL-UP BAR: 0</h3>
                         <div class="card-body">
                             <p>Robot goes under the bar</p>
                             <div class="buttons-container">
@@ -767,7 +821,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m07">M07 - ROBOT DANCE: 0</h1>
+                        <h3 class="name" id="m07">M07 - ROBOT DANCE: 0</h3>
                         <div class="card-body">
                             <p>Dancing on the dance floor at the end of the match</p>
                             <div class="buttons-container">
@@ -778,7 +832,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m08">M08 - BOCCIA: 0</h1>
+                        <h3 class="name" id="m08">M08 - BOCCIA: 0</h3>
                         <div class="card-body">
                             <p>Both teams slide one cube to the other team's field and color match</p>
                             <div class="buttons-container">
@@ -800,7 +854,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m09">M09 - TIRE FLIP: 0</h1>
+                        <h3 class="name" id="m09">M09 - TIRE FLIP: 0</h3>
                         <div class="card-body">
                             <p>Flips the heavy tread tire white side up.</p>
                             <div class="buttons-container">
@@ -824,7 +878,7 @@
                 </div>
                 <div class="column3">
                     <div class="mission card">
-                        <h1 class="name" id="m10">M10 - CELL PHONE: 0</h1>
+                        <h3 class="name" id="m10">M10 - CELL PHONE: 0</h3>
                         <div class="card-body">
                             <p>Flips the cell phone white side up.</p>
                             <div class="buttons-container">
@@ -835,7 +889,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m11">M11 - TREADMILL: 0</h1>
+                        <h3 class="name" id="m11">M11 - TREADMILL: 0</h3>
                         <div class="card-body">
                             <p>Spins the rollers to a specific color</p>
                             <div class="buttons-container">
@@ -852,7 +906,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m12">M12 - ROW MACHINE: 0</h1>
+                        <h3 class="name" id="m12">M12 - ROW MACHINE: 0</h3>
                         <div class="card-body">
                             <p>Moves the wheel out of the large circle</p>
                             <div class="buttons-container">
@@ -869,7 +923,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m13">M13 - WEIGHT MACHINE: 0</h1>
+                        <h3 class="name" id="m13">M13 - WEIGHT MACHINE: 0</h3>
                         <div class="card-body">
                             <p>Set the color before the match and pushes the lever down</p>
                             <div class="buttons-container">
@@ -883,7 +937,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m14">M14 - HEALTH UNITS: 0</h1>
+                        <h3 class="name" id="m14">M14 - HEALTH UNITS: 0</h3>
                         <div class="card-body">
                             <p>How many health units are touching either the RePLAY logo or the gray area around the bench?</p>
                             <div class="slidecontainer">
@@ -898,7 +952,7 @@
                         </div>
                     </div>
                     <div class="mission card">
-                        <h1 class="name" id="m15">M15 - PRECISION TOKENS: 60</h1>
+                        <h3 class="name" id="m15">M15 - PRECISION TOKENS: 60</h3>
                         <div class="card-body">
                             <p>Precision token left after the match</p>
                             <div class="slidecontainer">
@@ -916,7 +970,7 @@
 
             <div style="margin: 0 0 1em 0; text-align:center;" id="google_translate_element"></div>
 
-            <script type="text/javascript">
+            <script >
                 function googleTranslateElementInit() {
                     new google.translate.TranslateElement(
                         {pageLanguage: 'en'},
@@ -925,14 +979,14 @@
                 }
             </script>
 
-            <script type="text/javascript" src=
+            <script  src=
             "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
             </script>
 
             <p style="margin: 0.3em 0; text-align:center;">
                 Please report bugs, feedback, and tips to <a href="mailto:contact.quantumleapers@gmail.com">contact.quantumleapers@gmail.com</a> or at <a href="https://quantum-leapers.web.app/contact" target="_blank">our team's website</a>.
             </p>
-            <p style="margin: 0.3em 0; text-align:center;">FLL RePlay Scorer v1 - Released August 14, 2020</p>
+            <p style="margin: 0.3em 0; text-align:center;">FLL RePlay Scorer v1.2 - Released August 14, 2020</p>
             <p style="margin-bottom: 70px;text-align:center;" class="bottomText">Designed and coded by Sathvik Malla and Mithil Patil, members of the Quantum Leapers, a FIRST Tech Challenge team. For more about them and the Quantum Leapers please visit <a href="https://quantum-leapers.web.app/" target="_blank">our team's website</a>.</p>
         </div>
         <div class="footer">
