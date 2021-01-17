@@ -11,7 +11,7 @@
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
 	},
 	"functions": {
-		"runtime": "nodejs15",
+		"runtime": "nodejs10",
 		"source": "functions"
 	}
 }

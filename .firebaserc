@@ -3,7 +3,7 @@
     "default": "fll-scorer"
   },
   "targets": {
-    "scorerfll": {
+    "fll-scorer": {
       "hosting": {
         "fllscorer": [
           "fll-scorer"
