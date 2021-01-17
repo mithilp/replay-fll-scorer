@@ -1,0 +1,27 @@
+{
+	"name": "fllscorer",
+	"version": "1.0.0",
+	"description": "We deeply appreciate any contributions to our FLL Scorer Project. To contribute, simply fork the repository and when you are ready, create a pull request. We will test your code in the pull request, merge it to the main branch, and make it public as soon as possible. Thank you. ## Issues With any project will come issues, so feel free to report those bugs in the Issues tab and we will do our best to fix the issue as soon as possible.",
+	"main": "index.js",
+	"dependencies": {
+		"ejs": "^3.1.3",
+		"express": "^4.17.1",
+		"firebase-admin": "^9.4.2",
+		"serve-favicon": "^2.5.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mithilp/fllscorer.git"
+	},
+	"keywords": [],
+	"author": "mithilp",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mithilp/fllscorer/issues"
+	},
+	"homepage": "https://github.com/mithilp/fllscorer#readme"
+}
