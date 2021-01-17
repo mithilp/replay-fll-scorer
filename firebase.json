@@ -1,12 +1,17 @@
 {
-  "hosting": {
-    "public": "public",
-    "rewrites": [{
-      "source": "**",
-      "function":"app"
-    }]
-  },
-  "functions": {
-    "runtime": "nodejs8"
-  }
+	"hosting": {
+		"public": "public",
+		"target": "fllscorer",
+		"rewrites": [
+			{
+				"source": "**",
+				"function": "app"
+			}
+		],
+		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+	},
+	"functions": {
+		"runtime": "nodejs15",
+		"source": "functions"
+	}
 }

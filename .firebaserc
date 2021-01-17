@@ -1,5 +1,14 @@
 {
   "projects": {
-    "default": "scorerfll"
+    "default": "fll-scorer"
+  },
+  "targets": {
+    "scorerfll": {
+      "hosting": {
+        "fllscorer": [
+          "fll-scorer"
+        ]
+      }
+    }
   }
 }
