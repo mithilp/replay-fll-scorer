@@ -1,17 +1,7 @@
 {
 	"hosting": {
 		"public": "public",
-		"target": "fllscorer",
-		"rewrites": [
-			{
-				"source": "**",
-				"function": "app"
-			}
-		],
+		"cleanUrls": true,
 		"ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
-	},
-	"functions": {
-		"runtime": "nodejs10",
-		"source": "functions"
 	}
 }

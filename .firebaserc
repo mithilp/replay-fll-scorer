@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "fll-scorer"
+    "default": "scorerfll"
   },
   "targets": {
     "fll-scorer": {
