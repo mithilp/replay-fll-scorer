@@ -9,6 +9,13 @@
           "fll-scorer"
         ]
       }
+    },
+    "scorerfll": {
+      "hosting": {
+        "fll-scorer": [
+          "fll-scorer"
+        ]
+      }
     }
   }
 }
